@@ -1,8 +1,7 @@
-.csv
-.parquet
+*.csv
+*.parquet
+*.txt
 
-percorsi cartelle.txt
-
-pgadmin_conn_data
-dtc-postgres_volume_local
-ny_taxi_postgres_data
+DOCKER_SQL/ny_taxi_postgres_data/
+DOCKER_SQL/pgadmin_conn_data/
+DOCKER_SQL/dtc-postgres_volume_local/
