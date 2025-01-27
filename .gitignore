@@ -2,6 +2,8 @@
 *.parquet
 *.txt
 
+DOCKER_SQL/ny_taxi_postgres_data/yellow_tripdata_2021-01.csv
+
 DOCKER_SQL/ny_taxi_postgres_data/
 DOCKER_SQL/pgadmin_conn_data/
 DOCKER_SQL/dtc-postgres_volume_local/
