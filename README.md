@@ -1,5 +1,6 @@
 # data-engineering-zoomcamp-project-repo
 My repository for the Data Engineering ZoomCamp course.
+Link to official course repository by DataTalksClub: https://github.com/DataTalksClub/data-engineering-zoomcamp
 
 ## WEEK 1 - DOCKER & SQL
 ### DOCKER RUN POSTGRES CODE
