@@ -2,8 +2,15 @@
 *.parquet
 *.txt
 
-DOCKER_SQL/ny_taxi_postgres_data/yellow_tripdata_2021-01.csv
+01_docker_sql/ny_taxi_postgres_data/yellow_tripdata_2021-01.csv
 
-DOCKER_SQL/ny_taxi_postgres_data/
-DOCKER_SQL/pgadmin_conn_data/
-DOCKER_SQL/dtc-postgres_volume_local/
+01_docker_sql/ny_taxi_postgres_data/
+01_docker_sql/pgadmin_conn_data/
+01_docker_sql/dtc-postgres_volume_local/
+
+02_kestra/pgadmin_conn_data/
+02_kestra/dtc-postgres_volume_local/
+02_kestra/postgres-data/
+02_kestra/kestra-data/
+02_kestra/zoomcamp-data/
+02_kestra/pgadmin_conn_data_kestra/

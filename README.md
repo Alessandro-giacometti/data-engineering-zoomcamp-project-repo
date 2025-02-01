@@ -1,7 +1,7 @@
 # data-engineering-zoomcamp-project-repo
 My repository for the Data Engineering ZoomCamp course.
 
-## DOCKER + POSTGRES
+## WEEK 1 - DOCKER & SQL
 ### DOCKER RUN POSTGRES CODE
 docker run -it \
   -e POSTGRES_USER="root" \
@@ -108,6 +108,15 @@ In addition to course video, to persist the pgadmin configuration, add this volu
 and this code at the end of the configuration file:
 "./pgadmin_conn_data:/var/lib/pgadmin:rw"
 
+Finally, to run the docker compose container use this command:
+docker-compose up
+
+To stop the conatiner use the command:
+docker-compose down
+
+If you want to keep the terminal, use the "detached mode" with this code:
+docker-compose up -d
+
 ## RE-INGEST DATA TO POSTGRES DB IN THE DOCKER-COMPOSE CONAINTER
 Need to specify the default network create by docker compose.
 Remember that in docker compose, the host name is equal to the service name (pgdatabase)
@@ -124,11 +133,11 @@ docker run -it \
 
 
 
-# HOMEWORK
+# HOMEWORK WEEK 1
 
 ## Module 1 Homework: Docker & SQL
 ### Question 1
-cd "C:\Users\Aless\Documents\GIT\data-engineering-zoomcamp-project-repo\docker_sql\homework\1"
+cd "C:\Users\Aless\Documents\GIT\data-engineering-zoomcamp-project-repo\01_docker_sql\homework\1"
 
 Answer: 24.3.1
 
@@ -199,3 +208,60 @@ ORDER BY MAX(tip_amount) DESC;
 
 Max tip: 87.3
 Anwser: JFK Airport
+
+## WEEK 2 - KESTRA
+I will run Kestra in Docker and use it orchestrate a pipeline to extract data and put in a Postgres database. To access the database I will use Pgadmin.
+I will use Docker Compose to run all the containers.
+
+### SETUP DOCKER
+I created a docker-compose.yaml file to setup the configuration and run Kestra, Postgres and PGadmin.
+
+To run the container:
+docker-compose up -d
+
+### Local DB: Load Taxi Data to Postgres
+
+### Local DB: Learn Scheduling and Backfills
+
+### Local DB: Orchestrate dbt Models
+
+
+# HOMEWORK WEEK 2
+
+## Module 2 Homework: Kestra Orchestration
+### Question 1
+Run the "homework_extract_taxi_csv" flow selecting type "yellow", year "2020" and month "12", which extracts the "yellow_tripdata_2020-12.csv" file.
+From "Executions > Output" is possible to view the ouput file size.
+
+Answer: 128.3 MB
+
+### Question 2
+Run the "homework_extract_taxi_csv" flow selecting type "green", year "2020" and month "04" and see the rendered value of the value "file" during the execution.
+
+Answer: green_tripdata_2020-04.csv
+
+### Question 3
+SELECT COUNT(*)
+FROM public.yellow_tripdata
+WHERE filename LIKE 'yellow_tripdata_2020_%'
+
+Answer: 24648499
+
+### Question 4
+SELECT COUNT(*)
+FROM public.green_tripdata
+WHERE filename LIKE 'green_tripdata_2020_%'
+
+Answer: 1734051
+
+### Question 5
+SELECT COUNT(*)
+FROM public.yellow_tripdata
+WHERE filename = 'yellow_tripdata_2021-03.csv'
+
+Answer: 1925152
+
+### Question 6
+Documentation for changing timezone in the Schedule trigger configuration: https://kestra.io/plugins/core/triggers/io.kestra.plugin.core.trigger.schedule
+
+Answer: Add a timezone property set to America/New_York in the Schedule trigger configuration
