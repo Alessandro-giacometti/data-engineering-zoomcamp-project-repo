@@ -1,6 +1,9 @@
 *.csv
 *.parquet
 *.txt
+*.json
+
+de-zoomcamp-ag15-ce2b96ea670a.json
 
 01_docker_sql/ny_taxi_postgres_data/yellow_tripdata_2021-01.csv
 
