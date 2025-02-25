@@ -106,12 +106,21 @@ Answer: 10000
 
 <br>
 
-## Question 4: Trip Duration Analysis**
+## Question 4
 
 Calculate the average trip duration in minutes.
 
 ```python
-
+with pipeline.sql_client() as client:
+    res = client.execute_sql(
+            """
+            SELECT
+            ROUND(AVG(date_diff('minute', trip_pickup_date_time, trip_dropoff_date_time)), 2)
+            FROM rides;
+            """
+        )
+    # Prints column values of the first row
+    print(res)
 ```
 
-Anwser: 12.3 minutes
+Answer: 12.3 minutes
