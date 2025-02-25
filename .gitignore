@@ -2,6 +2,7 @@
 *.parquet
 *.txt
 *.json
+*.duckdb
 
 de-zoomcamp-ag15-ce2b96ea670a.json
 
